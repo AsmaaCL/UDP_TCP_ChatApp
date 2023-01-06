@@ -57,10 +57,8 @@ class TCP_Client {
     }
 
     public static void error_args(){
-        System.out.println("\n-----------------------------------------------");
         System.out.println("Unaccepted arguments (conformity), default values :");
         System.out.println("Address : localhost");
         System.out.println("Port : 8888");
-        System.out.println("-----------------------------------------------\n");
     }
 }
