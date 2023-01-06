@@ -25,7 +25,7 @@ class TCP_Server {
     }
 
     public TCP_Server() throws IOException {
-        this.port = 8888; //port par defaut
+        this.port = 8888; //default port
         this.etat_server = 1;
         new TCP_Server(port, etat_server);
     }
@@ -34,7 +34,7 @@ class TCP_Server {
         this.port = port;
         socket = new ServerSocket(port);
         toString(etat);
-        System.out.println("Serveur en attente d'un client :");
+        System.out.println("Server waiting for a client :");
         TCPConnexion = socket.accept();
         System.out.println("Client connected");
         in = new DataInputStream(TCPConnexion.getInputStream());
@@ -68,22 +68,16 @@ class TCP_Server {
 
     public String toString(int etat) {
         if (etat==0) {
-            System.out.println("\n-----------------------------------------------");
-            System.out.println("Serveur Connected");
+            System.out.println("Server connected");
             System.out.println("Port : " + this.port);
-            System.out.println("-----------------------------------------------\n");
         }
         else if (etat==1) {
-            System.out.println("\n-----------------------------------------------");
-            System.out.println("Serveur Connected");
-            System.out.println("Argument non conforme, valeur par défaut :");
+            System.out.println("Server connected");
+            System.out.println("Unaccepted argument (conformity), Default value :");
             System.out.println("Port : " + this.port);
-            System.out.println("-----------------------------------------------\n");
         }
         else {
-            System.out.println("\n-----------------------------------------------");
-            System.out.println("Serveur Disconnected");
-            System.out.println("-----------------------------------------------\n");
+            System.out.println("Server disconnected");
         }
         return null;
     }

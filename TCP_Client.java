@@ -23,8 +23,8 @@ class TCP_Client {
     }
 
     public TCP_Client() throws IOException {
-        this.port = 8888; //port par defaut
-        this.address = "localhost"; //adresse par defaut
+        this.port = 8888; //default port
+        this.address = "localhost"; //default address
         new TCP_Client(this.address, this.port);
     }
 
@@ -47,7 +47,7 @@ class TCP_Client {
                 }
                 out_server.writeUTF(data);
                 rep = in_server.readUTF();
-                System.out.println("Conversion en Hexadecimale : " + rep);
+                System.out.println("Conversion into hexadecimal : " + rep);
             }
         }
         catch (IOException e){
@@ -58,8 +58,8 @@ class TCP_Client {
 
     public static void error_args(){
         System.out.println("\n-----------------------------------------------");
-        System.out.println("Arguments non conformes, valeurs par défauts :");
-        System.out.println("Adresse : localhost");
+        System.out.println("Unaccepted arguments (conformity), default values :");
+        System.out.println("Address : localhost");
         System.out.println("Port : 8888");
         System.out.println("-----------------------------------------------\n");
     }
